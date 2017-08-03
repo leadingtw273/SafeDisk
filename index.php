@@ -23,67 +23,7 @@
 
 <!--NAVBAR
 ==========================================================================================================-->
-  <div class="navbar-wrapper">
-  <div class="container">
-
-
-   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> 
-          </button>
-          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tower"></span>Safe Disk</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right ">
-            <!--<li><a href="#pdrg" >Product registration</a></li>-->
-            <li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-            <li><a href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
-            <li><a href="#about" ><span class="glyphicon glyphicon-wrench"></span> About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-  </div>
-  </div>  
-
-<!--modal-->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Login</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <label for="email">Email address:</label>
-          <div class="form-group input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input type="email" class="form-control" id="email">
-          </div>
-          <label for="pwd">Password:</label>
-          <div class="form-group input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
-            </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-      </div>
-    </div>
-
-  </div>
-</div>
+<?php include("navbar.php");?>
 
 <!-- Carousel
 ==========================================================================================================-->
@@ -201,23 +141,9 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; </p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-
-
-
+      <?php include("footer.php");?>
     <!--
     <script>
     function test(){
