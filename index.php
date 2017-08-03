@@ -41,8 +41,9 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right ">
             <!--<li><a href="#pdrg" >Product registration</a></li>-->
-            <li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+            <!--<li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>-->
             <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+            
             <li><a href="#about"><span class="glyphicon glyphicon-wrench"></span> About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
