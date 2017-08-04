@@ -13,9 +13,14 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/css/SD_index.css" rel="stylesheet">
 
     <script src="dist/js/JStest.js"></script>
+    
+    <style>
+      body{
+        padding-top: 50px; 
+      }
+    </style>
 
   </head>
 
@@ -23,7 +28,25 @@
 
     <!--Navbar-->
 
-    <?php include("navbar.php");?>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <botton type="botton" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </botton>
+            <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-tower"></span>Safe Disk</a>
+        </div> 
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+            <li><a href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+            <li><a href="#about" ><span class="glyphicon glyphicon-wrench"></span> About</a></li>
+          </ul> 
+        </div>     
+      </div>
+    </nav>
 
     <!--MainPage Jumbotron-->
 
@@ -56,11 +79,12 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr>
 
-      <!--footer-->
-      
-      <?php include("footer.php");?>
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017 Company, Inc. &middot; </p>
+      </footer>
 
     </div>
 
