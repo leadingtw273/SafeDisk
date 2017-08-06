@@ -69,10 +69,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script src="dist/plug/sweetalert/dist/sweetalert.min.js"></script> 
-    <script type="text/javascript" charset="utf-8"></script>
+
 
   </body>
 </html>
