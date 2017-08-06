@@ -21,4 +21,9 @@
         $sqlin = new memberFunction;
         echo $sqlin -> signout();  
       }
+      //ajax:驗證key
+      if(isset($_POST["addKey"])){
+        $sqlin = new memberFunction;
+        echo $sqlin -> addKey($_POST["addKey"]);  
+      }
 ?>

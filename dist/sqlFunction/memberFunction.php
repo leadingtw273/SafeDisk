@@ -59,6 +59,30 @@
                session_destroy();
                return '1';
           }
+          //addKey key驗證與註冊
+          function addKey($addKey){
+               header("Content-Type:text/html; charset=utf-8");
+               require_once 'dbConfig.php';
+               $mysqli = new mysqli(host, username, password, dbname);
+               //確認連線
+               if($mysqli -> connect_errno){
+                    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+               }
+               $mysqli -> set_charset("utf-8");
 
+               $sql = "SELECT * FROM keyView WHERE keyView_key='".$addKey."'";
+               $record = mysqli_fetch_array($mysqli -> query($sql));
+               if($record["keyView_user"] == '' && $record["keyView_key"] == $addKey){
+                    session_start();
+                    $sql = "UPDATE keyView SET keyView_user = '".$_SESSION["member_user"]."' WHERE keyView_key='".$addKey."'";
+                    $mysqli->query($sql);
+                    $mysqli->close();
+
+                    return '1';
+               }else{
+                    $mysqli->close();
+                    return '0';
+               }
+          }
 	}
 ?>

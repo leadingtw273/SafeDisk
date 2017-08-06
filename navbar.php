@@ -11,7 +11,7 @@
     </div> 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="register" href="#"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+        <li><a id="register" href="disk_register.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
         <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
         <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
         <li><a id="signup" href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
