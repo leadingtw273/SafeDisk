@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a id="register" href="#"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-        <li><a id="manage" href="#"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
+        <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
         <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
         <li><a id="signup" href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
         <li><a id="login" href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
@@ -58,6 +58,7 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/plug/sweetalert/dist/sweetalert.min.js"></script> 
     <script src="dist/js/bootstrapValidator.min.js"></script> 
+    <script src="dist/js/jquery.dataTables.min.js"></script> 
 
 
     <script type="text/javascript">

@@ -14,16 +14,12 @@
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/jquery.dataTables.min.css">
-
-    <!--datatable js-->
-
-    <script src="dist/js/jquery.dataTables.min.js"></script> 
     
     <style>
       body{
         padding-top: 50px; 
       }
-      .pan{
+      .tt{
         border-radius:10px;
         padding-top: 50px;
       }
@@ -37,28 +33,32 @@
 
     <?php include("navbar.php");?>
 
-    <div class="container col-md-8 col-md-offset-2 pan">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Safe Disk Menage</h3>
+    <div class="container">
+        <div class="tt center">
+          <h3>Safe Disk Menage</h3>
         </div>
         <table class="table table-hover table-bordered table-responsive" id="table_id">
-          <thead class="thead-default">
+          <thead >
             <tr>
-              <th>#</th>
-              <th>Data</th>
-              <th>Url</th>
+              <th class="col-xs-2 col-md-2">#</th>
+              <th class="col-xs-3 col-md-3">Key</th>
+              <th class="col-xs-5 col-md-5">Url</th>
             </tr>
           </thead>
         </table>
-      </div>
     </div>
     
 
     <script type="text/javascript" charset="utf-8">
       
       $(document).ready(function() {
-        $('#table_id').dataTable();
+        var opt={
+          "paging": false,
+          "info":     false,
+          "bFilter": false,
+          "ajax":"dist/sqlFunction/table_list_data.php"
+        };
+        $('#table_id').dataTable(opt);
       });
 
     </script>
