@@ -64,7 +64,6 @@
       });
 
       $(".tt").on('click', '.send', function() {
-        $(".btn").prop('disabled',true);
         var sent_url = $(this).data("url");
         $.ajax({
           type: "POST",
@@ -74,17 +73,11 @@
           data: {senter : sent_url},
           success: function(msg){
           if(msg == '1'){
-            swal({
-              title: "Sent Success",
-              type: "success",
-              showCancelButton: false, 
-              confirmButtonColor: "#DD6B55",
-              confirmButtonText: "OK!", 
-              closeOnConfirm: false
-            },
-            function(){
-              $(".btn").prop('disabled',false);
-            });
+            swal(
+              "Sent Success",
+              "already sent!",
+              "success"
+            );
           }
         }
       })
