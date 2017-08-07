@@ -22,6 +22,10 @@
         border-radius:10px;
         padding-top: 50px;
       }
+      .ff{
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
     </style>
   
   </head>
@@ -39,7 +43,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Sign UP!</h3>
         </div>
-        <form class="form-horizontal" id="sigupForm" method="post">
+        <form class="ff form-horizontal" id="sigupForm" method="post">
           <div class="form-group">
             <lable for="email" class="control-label col-sm-4">Email:</lable>
             <div class="col-sm-5">

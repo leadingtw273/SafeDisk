@@ -23,6 +23,13 @@
         border-radius:10px;
         padding-top: 50px;
       }
+      .ff{
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      .btn{
+        width: 100px;
+      }
     </style>
 
   </head>
@@ -38,14 +45,14 @@
         <div class="panel-heading">
           <h3 class="panel-title">Register</h3>
         </div>
-        <form class="form-horizontal" id="addKeyForm" method="post">
+        <form class="form-horizontal ff" id="addKeyForm" method="post">
           <div class="form-group">
             <lable for="email" class="control-label col-sm-4">Key:</lable>
             <div class="col-sm-5">
               <input type="text" class="form-control" id="inputkey" placeholder="Enter your key" name="key">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary center-block">sign up!</button>
+          <button type="submit" class="btn btn-primary center-block ">OK</button>
         </form>
       </div>
     </div>
@@ -99,6 +106,20 @@
                       confirmButtonColor: "#DD6B55",
                       confirmButtonText: "OK!", 
                       closeOnConfirm: false
+                    }
+                  );
+                }else{
+                  swal({
+                      title: "Success",
+                      text: "You can already use it",
+                      type: "success",
+                      showCancelButton: false, 
+                      confirmButtonColor: "#DD6B55",
+                      confirmButtonText: "OK!", 
+                      closeOnConfirm: false
+                    },
+                    function(){
+                      window.location = 'disk_manage.php';
                     }
                   );
                 }

@@ -20,7 +20,9 @@
 	    $row=mysqli_fetch_array($result); //取得列陣列
 	    $stock_key=$row["keyView_key"];
 	    $stock_url=$row["keyView_url"];
-	    $stock[$i]=array($i+1,$stock_key, $stock_url); //存入二維陣列
+	    $button_sendemail='<button type="button" class="send btn btn-primary btn-lg btn-block" data-url="'.$stock_url.'" ><span class="glyphicon glyphicon-envelope "></span></button>';
+	    $button_QRcode='<button type="button" class="qr btn btn-success btn-lg btn-block" data-url="'.$stock_url.'"><span class="glyphicon glyphicon-qrcode"></span></button>';
+	    $stock[$i]=array($i+1,$stock_key, $stock_url,$button_sendemail,$button_QRcode); //存入二維陣列
 	} //end of for
 	$arr["aaData"]=$stock;
 	echo json_encode($arr);  //將陣列轉成 JSON 資料格式傳回

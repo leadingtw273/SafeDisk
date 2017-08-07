@@ -21,7 +21,7 @@
       }
       .tt{
         border-radius:10px;
-        padding-top: 50px;
+        font-size: 20px;
       }
     </style>
 
@@ -34,15 +34,17 @@
     <?php include("navbar.php");?>
 
     <div class="container">
-        <div class="tt center">
+        <div>
           <h3>Safe Disk Menage</h3>
         </div>
-        <table class="table table-hover table-bordered table-responsive" id="table_id">
+        <table class="tt table table-hover table-bordered table-responsive" id="table_id">
           <thead >
             <tr>
-              <th class="col-xs-2 col-md-2">#</th>
-              <th class="col-xs-3 col-md-3">Key</th>
-              <th class="col-xs-5 col-md-5">Url</th>
+              <th class="col-xs-1 col-md-1 text-center">#</th>
+              <th class="col-xs-2 col-md-2 text-center">Key</th>
+              <th class="col-xs-4 col-md-4 text-center">Url</th>
+              <th class="col-xs-2 col-md-2 text-center">SendEmail</th>
+              <th class="col-xs-2 col-md-2 text-center">QRcode</th>
             </tr>
           </thead>
         </table>
@@ -59,6 +61,47 @@
           "ajax":"dist/sqlFunction/table_list_data.php"
         };
         $('#table_id').dataTable(opt);
+      });
+
+      $(".tt").on('click', '.send', function() {
+        $(".btn").prop('disabled',true);
+        var sent_url = $(this).data("url");
+        $.ajax({
+          type: "POST",
+          url: "http://127.0.0.1/SafeDisk/emailSenter.php",
+          dataType:'text',
+          async:false,
+          data: {senter : sent_url},
+          success: function(msg){
+          if(msg == '1'){
+            swal({
+              title: "Sent Success",
+              type: "success",
+              showCancelButton: false, 
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "OK!", 
+              closeOnConfirm: false
+            },
+            function(){
+              $(".btn").prop('disabled',false);
+            });
+          }
+        }
+      })
+      });
+
+      $(".tt").on('click', '.qr', function() {
+        $(".btn").prop('disabled',true);
+        var qr_url = $(this).data("url");
+        swal({
+          title: 'QR code',
+          text: 'Scan and download',
+          imageUrl: 'http://chart.apis.google.com/chart?cht=qr&chl='+ qr_url +'&chs=160x160&chld=L|0',
+          animation: false
+        },
+            function(){
+              $(".btn").prop('disabled',false);
+            })
       });
 
     </script>
