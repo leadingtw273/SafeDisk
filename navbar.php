@@ -70,7 +70,7 @@
   
   $(document).ready(function() {
 
-    //檢查是否已經登入
+    //檢查是否已經登入 
     $.ajax({
       type: "POST",
       url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
