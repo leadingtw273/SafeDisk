@@ -67,7 +67,7 @@
       url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
       dataType:'text',
       async:false,
-      data: {check : 1},
+      data: {getInf : 1},
       success: function(res){
         if(res == '1'){
         }
