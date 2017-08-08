@@ -11,15 +11,14 @@
     <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/jquery.dataTables.min.css">
+    <link href="dist/css/auto.css" rel="stylesheet">
     
+    <!--CSS-->
     <style>
-      body{
-        padding-top: 50px; 
-      }
-      .tt{
+      .css_table{
         border-radius:10px;
         font-size: 20px;
       }
@@ -30,15 +29,15 @@
   <body>
 
     <!--Navbar-->
-
     <?php include("navbar.php");?>
 
-    <div class="container">
+    <!--Table-->
+    <div class="container table-responsive">
         <div>
           <h3>Safe Disk Menage</h3>
         </div>
-        <table class="tt table table-hover table-bordered table-responsive" id="table_id">
-          <thead >
+        <table class="css_table table_class table table-striped table-responsive" id="table_id">
+          <thead>
             <tr>
               <th class="col-xs-1 col-md-1 text-center">#</th>
               <th class="col-xs-2 col-md-2 text-center">Key</th>
@@ -49,42 +48,71 @@
           </thead>
         </table>
     </div>
-    
 
+    <!--footer-->
+    <?php include("footer.php");?>
+
+    
+    <!--JavaScript=====================================================================-->
     <script type="text/javascript" charset="utf-8">
       
+      //Table Read
       $(document).ready(function() {
         var opt={
           "paging": false,
           "info":     false,
           "bFilter": false,
+          "columnDefs": [
+            {"className": "dt-center", "targets": "_all"}
+          ],
           "ajax":"dist/sqlFunction/table_list_data.php"
         };
         $('#table_id').dataTable(opt);
       });
 
-      $(".tt").on('click', '.send', function() {
+      //Sent Email
+      $(".table_class").on('click', '.send', function(){
         var sent_url = $(this).data("url");
-        $.ajax({
-          type: "POST",
-          url: "http://127.0.0.1/SafeDisk/emailSenter.php",
-          dataType:'text',
-          async:false,
-          data: {senter : sent_url},
-          success: function(msg){
-          if(msg == '1'){
-            swal(
-              "Sent Success",
-              "already sent!",
-              "success"
-            );
+        var sent_key = $(this).data("key");
+
+        swal({
+          title:'傳送中...',
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          onOpen: function(){
+            $.ajax({
+              type: "POST",
+              url: "http://127.0.0.1/SafeDisk/emailSenter.php",
+              dataType:'text',
+              async:false,
+              data: {sent_url : sent_url,sent_key : sent_key},
+              success: function(msg){
+                if(msg == '1'){
+                  swal(
+                    "Sent Success",
+                    "already sent!",
+                    "success"
+                  );
+                }else{
+                  swal(
+                    "Sent Error",
+                    "sent faill!",
+                    "error"
+                  );
+                }
+              },
+              error: function(){
+                swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+              }
+            })
           }
-        }
-      })
+        });
+        swal.showLoading();
+        
       });
 
-      $(".tt").on('click', '.qr', function() {
-        $(".btn").prop('disabled',true);
+      //Make QRcode
+      $(".table").on('click', '.qr', function(){
         var qr_url = $(this).data("url");
         swal({
           title: 'QR code',
@@ -92,13 +120,14 @@
           imageUrl: 'http://chart.apis.google.com/chart?cht=qr&chl='+ qr_url +'&chs=160x160&chld=L|0',
           animation: false
         },
-            function(){
-              $(".btn").prop('disabled',false);
-            })
+          function(){
+
+        });
       });
 
     </script>
 
   </body>
+
 </html>
 

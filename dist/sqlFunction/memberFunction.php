@@ -47,10 +47,10 @@
           //check 檢查登入
           function check(){
                session_start();
-               if(!isset($_SESSION["member_user"])){
-                    return '1';
+               if(isset($_SESSION["member_user"])){
+                    return $_SESSION["member_user"];
                }else{
-                    return '0';
+                    return '1';
                }
           }
           //signout 登出，刪除session

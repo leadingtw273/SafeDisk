@@ -11,18 +11,18 @@
     <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrapValidator.min.css" >
-    <link rel="stylesheet" type="text/css" href="dist/css/SD_index.css">
+    <link href="dist/css/auto.css" rel="stylesheet">
 
-
+    <!--CSS-->
     <style>
-      .pan{
+      .css_pan{
         border-radius:10px;
         padding-top: 50px;
       }
-      .ff{
+      .css_form{
         padding-top: 30px;
         padding-bottom: 30px;
       }
@@ -33,17 +33,15 @@
   <body>
 
     <!--NAVBAR-->
-
     <?php include("navbar.php");?>
 
     <!--FORMS-->
-
-    <div class="container col-md-8 col-md-offset-2 pan">
+    <div class="container col-md-8 col-md-offset-2 css_pan">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Sign UP!</h3>
         </div>
-        <form class="ff form-horizontal" id="sigupForm" method="post">
+        <form class="css_f form-horizontal" id="sigupForm" method="post">
           <div class="form-group">
             <lable for="email" class="control-label col-sm-4">Email:</lable>
             <div class="col-sm-5">
@@ -79,8 +77,11 @@
       </div>
     </div>
 
-    
+    <!--footer-->
+    <?php include("footer.php");?>
 
+    
+    <!--JavaScript=====================================================================-->
     <script type="text/javascript">
       $ (document).ready(function() {
         $('#sigupForm').bootstrapValidator({

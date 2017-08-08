@@ -11,22 +11,18 @@
     <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/css/SD_index.css" rel="stylesheet">
-
-    <script src="dist/js/JStest.js"></script>
+    <link href="dist/css/auto.css" rel="stylesheet">
 
   </head>
 
   <body>
 
     <!--Navbar-->
-
     <?php include("navbar.php");?>
 
     <!--MainPage Jumbotron-->
-
     <div class="jumbotron">
       <div class="container">
         <h1>SafeDisk</h1>
@@ -36,7 +32,6 @@
     </div>
 
     <!--row and columns text-->
-
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -55,22 +50,10 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-      <!--footer-->
-      
-      <?php include("footer.php");?>
-
     </div>
 
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-
+    <!--footer-->
+    <?php include("footer.php");?>
   </body>
 </html>
 

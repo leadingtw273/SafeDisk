@@ -11,23 +11,22 @@
     <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrapValidator.min.css" >
+    <link href="dist/css/auto.css" rel="stylesheet">
     
+    <!--CSS-->
     <style>
-      body{
-        padding-top: 50px; 
-      }
-      .pan{
+      .css_pan{
         border-radius:10px;
         padding-top: 50px;
       }
-      .ff{
+      .css_form{
         padding-top: 30px;
         padding-bottom: 30px;
       }
-      .btn{
+      .css_button{
         width: 100px;
       }
     </style>
@@ -37,27 +36,33 @@
   <body>
 
     <!--Navbar-->
-
     <?php include("navbar.php");?>
     
-    <div class="container col-md-8 col-md-offset-2 pan">
+    <!--Panel-->
+    <div class="container col-md-8 col-md-offset-2 css_pan">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Register</h3>
+          <p class="panel-title text-center">Register</p>
         </div>
-        <form class="form-horizontal ff" id="addKeyForm" method="post">
+        <form class="form-horizontal css_form" id="addKeyForm" method="post">
           <div class="form-group">
             <lable for="email" class="control-label col-sm-4">Key:</lable>
             <div class="col-sm-5">
               <input type="text" class="form-control" id="inputkey" placeholder="Enter your key" name="key">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary center-block ">OK</button>
+          <button type="submit" class="btn btn-primary center-block css_button">OK</button>
         </form>
       </div>
     </div>
 
+    <!--footer-->
+    <?php include("footer.php");?>
+
+    <!--JavaScript=====================================================================-->
     <script type="text/javascript">
+
+      //BootstrapValidator
       $ (document).ready(function() {
         $('#addKeyForm').bootstrapValidator({
           message: 'This value is not valid',
@@ -86,52 +91,50 @@
           var bv = $form.data('bootstrapValidator');
 
           //alert("made it to submit handler block!");
-            var key = document.getElementById("inputkey").value;
+          var key = document.getElementById("inputkey").value;
 
-            $.ajax({
-              type: "POST",
-              url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-              dataType:'text',
-              async:false,
-              data: { 
-                      addKey  : key,
-                    },
-              success: function(msg){
-                if(msg == '0'){
-                  swal({
-                      title: "Error",
-                      text: "Has been used or does not have this key",
-                      type: "error",
-                      showCancelButton: false, 
-                      confirmButtonColor: "#DD6B55",
-                      confirmButtonText: "OK!", 
-                      closeOnConfirm: false
-                    }
-                  );
-                }else{
-                  swal({
-                      title: "Success",
-                      text: "You can already use it",
-                      type: "success",
-                      showCancelButton: false, 
-                      confirmButtonColor: "#DD6B55",
-                      confirmButtonText: "OK!", 
-                      closeOnConfirm: false
-                    },
-                    function(){
-                      window.location = 'disk_manage.php';
-                    }
-                  );
-                }
-              },
-              error: function(){
-                swal("We found an error in your data.  Please return to home page and try again.", msg,"error")
+
+          $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+            dataType:'text',
+            async:false,
+            data: {addKey : key},
+            success: function(msg){
+              if(msg == '0'){
+                swal({
+                  title: "Error",
+                  text:  "Has been used or does not have this key",
+                  type:  "error",
+                  showCancelButton: false, 
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "OK!", 
+                  closeOnConfirm: false
+                });
+              }else{
+                swal({
+                  title: "Success",
+                  text: "You can already use it",
+                  type: "success",
+                  showCancelButton: false, 
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "OK!", 
+                  closeOnConfirm: false
+                },
+                function(){
+                  window.location = 'disk_manage.php';
+                });
               }
-            });//close ajax
-
+            },
+            error: function(){
+              swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+            }
+          });
         });
       });
     </script>
+
   </body>
+
 </html>
 

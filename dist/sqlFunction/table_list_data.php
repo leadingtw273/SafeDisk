@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	header('Content-Type: text/html;charset=UTF-8');
 	require_once 'dbConfig.php';
     $mysqli = new mysqli(host, username, password, dbname);
@@ -8,7 +9,6 @@
     }
     $mysqli -> set_charset("utf-8");
 
-    session_start();
 	$SQL="SELECT keyView_key, keyView_url FROM keyView WHERE keyView_user='".$_SESSION["member_user"]."'"; 
 	$stock=array(); 
 
@@ -20,10 +20,11 @@
 	    $row=mysqli_fetch_array($result); //取得列陣列
 	    $stock_key=$row["keyView_key"];
 	    $stock_url=$row["keyView_url"];
-	    $button_sendemail='<button type="button" class="send btn btn-primary btn-lg btn-block" data-url="'.$stock_url.'" ><span class="glyphicon glyphicon-envelope "></span></button>';
+	    //make table button
+	    $button_sendemail='<button type="button" class="send btn btn-primary btn-lg btn-block" data-url="'.$stock_url.'" data-key="'.$stock_key.'"><span class="glyphicon glyphicon-envelope "></span></button>';
 	    $button_QRcode='<button type="button" class="qr btn btn-success btn-lg btn-block" data-url="'.$stock_url.'"><span class="glyphicon glyphicon-qrcode"></span></button>';
 	    $stock[$i]=array($i+1,$stock_key, $stock_url,$button_sendemail,$button_QRcode); //存入二維陣列
-	} //end of for
+	} 
 	$arr["aaData"]=$stock;
 	echo json_encode($arr);  //將陣列轉成 JSON 資料格式傳回
     $mysqli->close();

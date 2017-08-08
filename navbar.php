@@ -1,6 +1,7 @@
 <!--navbar-->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
+    <!--navbar-header-->
     <div class="navbar-header">
       <botton type="botton" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -9,10 +10,12 @@
       </botton>
         <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-tower"></span>Safe Disk</a>
     </div> 
+    <!--navbar-body-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a id="register" href="disk_register.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
         <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
+        <li><a id="user" href="#user" ><span id="user_span" class="glyphicon glyphicon-user"></span></a></li>
         <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
         <li><a id="signup" href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
         <li><a id="login" href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
@@ -22,11 +25,11 @@
   </div>
 </nav> 
 
-<!--modal-->
+<!--Modal-->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+    <!-- Login Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -54,156 +57,161 @@
 
   </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script src="dist/plug/sweetalert/dist/sweetalert.min.js"></script> 
-    <script src="dist/js/bootstrapValidator.min.js"></script> 
-    <script src="dist/js/jquery.dataTables.min.js"></script> 
 
+<!--include JS-->
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/plug/sweetalert2/dist/sweetalert2.min.js"></script> 
+<script src="dist/js/bootstrapValidator.min.js"></script> 
+<script src="dist/js/jquery.dataTables.min.js"></script> 
 
-    <script type="text/javascript">
-      $(document).ready(function() {
+<!--set navbar option-->
+<script type="text/javascript">
+  
+  $(document).ready(function() {
 
-        $.ajax({
-          type: "POST",
-          url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-          dataType:'text',
-          async:false,
-          data: {check : 1},
-          success: function(res){
-            if(res == '1'){
-              $("#register").hide();
-              $("#manage").hide();
-              $("#signout").hide();
+    //檢查是否已經登入
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+      dataType:'text',
+      async:false,
+      data: {check : 1},
+      success: function(res){
+        if(res == '1'){
+          $("#register").hide();
+          $("#manage").hide();
+          $("#signout").hide();
+          $("#user").hide();
 
-            }else{
-              $("#signup").hide();
-              $("#login").hide();
-            }
-          },
-          error: function(){
-            swal("We found an error in your data.  Please return to home page and try again.", res,"error")
-          }
-        })
+        }else{
+          $("#signup").hide();
+          $("#login").hide();
+          $("#user_span").after(" "+res);
+        }
+      },
+      error: function(){
+        swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+      }
+    })
 
-        $('#signout').click(function(event) {
-          swal({ 
-            title: "Are you sure you want to log out?", 
-            text: "You will lose all your current actions back to the home page", 
-            type: "warning",
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "signout", 
-            cancelButtonText: "cancel",
-            showCancelButton: true, 
-            closeOnConfirm: false, 
-            closeOnCancel: true  
-          },
-          function(isConfirm){ 
-            if (isConfirm) { 
-              $.ajax({
-                url  : "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-                type : 'POST',
-                dataType : 'text',
-                async:false,
-                data : {signout : 1},
-                success: function(res) {
-                  if(res == '1'){
-                    window.location = "index.php";
-                  }
-                }
-              });
-            }
-          });
-        });
-
-        $('#loginForm').bootstrapValidator({
-          message: 'This value is not valid',
-          feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-          },
-          fields: {
-            username: {
-              validators: {
-                notEmpty: {
-                  message: 'The username is required'
-                }
+    //signout_set
+    $('#signout').click(function(event) {
+      swal({ 
+        title: "Are you sure you want to log out?", 
+        text: "You will lose all your current actions back to the home page", 
+        type: "warning",
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "signout", 
+        cancelButtonText: "cancel",
+        showCancelButton: true, 
+        closeOnConfirm: false, 
+        closeOnCancel: true  
+      },
+      function(isConfirm){ 
+        if (isConfirm) { 
+          $.ajax({
+            url  : "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+            type : 'POST',
+            dataType : 'text',
+            async:false,
+            data : {signout : 1},
+            success: function(res) {
+              if(res == '1'){
+                window.location = "index.php";
               }
             },
-            password: {
-              validators: {
-                notEmpty: {
-                  message: 'The password is required'
-                }
-              }
+            error: function(){
+              swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+            }
+          });
+        }
+      });
+    });
+
+    //login_set
+    $('#loginForm').bootstrapValidator({
+      message: 'This value is not valid',
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        username: {
+          validators: {
+            notEmpty: {
+              message: 'The username is required'
             }
           }
-        }).on('success.form.bv',function(e){
-          // Prevent form submission
-          e.preventDefault();
+        },
+        password: {
+          validators: {
+            notEmpty: {
+              message: 'The password is required'
+            }
+          }
+        }
+      }
+    }).on('success.form.bv',function(e){
+      // Prevent form submission
+      e.preventDefault();
+      // Get the form instance
+      var $form = $(e.target);
+      // Get the BootstrapValidator instance
+      var bv = $form.data('bootstrapValidator');
 
-          // Get the form instance
-          var $form = $(e.target);
+      var user  = document.getElementById("username").value;
+      var pwd   = document.getElementById("pwd").value;
 
-          // Get the BootstrapValidator instance
-          var bv = $form.data('bootstrapValidator');
-
-          //alert("made it to submit handler block!");
-            var user  = document.getElementById("username").value;
-            var pwd   = document.getElementById("pwd").value;
-
-            $.ajax({
-              type: "POST",
-              url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-              dataType:'text',
-              async:false,
-              data: { 
-                      loginUser   : user,
-                      loginPwd    : pwd
-                    },
-              success: function(res){
-                switch(res){
-                  case '0':
-                    swal({
-                      title: "Login Error",
-                      type: "error",
-                      text: "username or password error",
-                      timer: 3000
-                    },
-                      function(){
-                        window.location = "index.php";
-                      },
-                      function(dismiss){
-                        window.location = "index.php";
-                      }
-                    );
-                    break;
-                  case '1':
-                    swal({
-                      title: "Login Success",
-                      type: "success",
-                      text: "will close in 5 seconds.",
-                      timer: 5000
-                    },
-                      function(){
-                        window.location = "index.php";
-                      },
-                      function(dismiss){
-                        window.location = "index.php";
-                      }
-                    );
-                    break;
-                  default:
-
-                }
-
+      $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+        dataType:'text',
+        async:false,
+        data: { 
+                loginUser   : user,
+                loginPwd    : pwd
               },
-              error: function(){
-                swal("We found an error in your data.  Please return to home page and try again.", res,"error")
-              }
-            });//close ajax
-
-        });
+        success: function(res){
+          switch(res){
+            case '0':
+              swal({
+                title: "Login Error",
+                type: "error",
+                text: "username or password error",
+                timer: 3000
+              },
+                function(){
+                  window.location = "index.php";
+                },
+                function(dismiss){
+                  window.location = "index.php";
+                }
+              );
+              break;
+            case '1':
+              swal({
+                title: "Login Success",
+                type: "success",
+                text: "will close in 5 seconds.",
+                timer: 5000
+              },
+                function(){
+                  window.location = "index.php";
+                },
+                function(dismiss){
+                  window.location = "index.php";
+                }
+              );
+              break;
+            default:
+          }
+        },
+        error: function(){
+          swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+        }
       });
-    </script>
+    });
+  });
+</script>
