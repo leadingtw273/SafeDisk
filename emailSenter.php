@@ -17,7 +17,7 @@
 	$mail->AddAddress($email,$name);			//	Add a recipient
 	$mail->Subject = "SafeDisk apk link";		//	email title
 	//email text
-	$mail->Body    = '<p style= "font-size:20;font-family:verdana;">this is your USB["'.$_POST["sent_key"].'"] link:</p> <h1 style= "font-family:verdana;">"'.$_POST["sent_url"].'"</h1>';
+	$mail->Body    = '<p style= "font-size:20;font-family:verdana;">this is your USB["'.$_POST["sent_key"].'"] link:</p> <a style= "font-family:verdana;font-size:36px" href="'.$_POST["sent_url"].'">'.$_POST["sent_url"].'</a>';
 
 	//send email!
 	if($mail->Send()){

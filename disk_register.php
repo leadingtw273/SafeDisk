@@ -42,16 +42,16 @@
     <div class="container col-md-8 col-md-offset-2 css_pan">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <p class="panel-title text-center">Register</p>
+          <p class="panel-title text-center"><a style="font-size: 36px;">Register</a></p>
         </div>
         <form class="form-horizontal css_form" id="addKeyForm" method="post">
-          <div class="form-group">
+          <div class="form-group" style="font-size: 22px;">
             <lable for="email" class="control-label col-sm-4">Key:</lable>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputkey" placeholder="Enter your key" name="key">
+              <input type="text" class="form-control input-lg" id="inputkey" placeholder="Enter your key" name="key">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary center-block css_button">OK</button>
+          <button type="submit" class="btn btn-primary center-block css_button btn-lg">OK</button>
         </form>
       </div>
     </div>
