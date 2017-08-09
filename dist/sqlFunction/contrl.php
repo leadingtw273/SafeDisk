@@ -27,6 +27,12 @@
       $sqlin = new memberFunction;
       echo $sqlin -> addKey($_POST["addKey"]);  
     }
+    //ajax:檢查使用者是否重複
+    if(isset($_POST["username"])){
+      $sqlin = new memberFunction;
+      $isAvailable = $sqlin -> checkUsername($_POST["username"]);
+      echo json_encode(array('valid' => $isAvailable,));
+    }
     //load:取得session:name
     if(isset($_POST["name"])){
       echo $_SESSION["member_user"];

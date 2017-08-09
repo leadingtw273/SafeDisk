@@ -81,5 +81,22 @@
                     return '0';
                }
           }
+          //checkUsername 找尋是否有重複的Username
+          function checkUsername($username){
+               header("Content-Type:text/html; charset=utf-8");
+               require_once 'dbConfig.php';
+               $mysqli = new mysqli(host, username, password, dbname);
+               //確認連線
+               if($mysqli -> connect_errno){
+                    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+               }
+               $mysqli -> set_charset("utf-8");
+
+               $sql = "SELECT user FROM member WHERE user='".$username."'";
+               $record = mysqli_fetch_row($mysqli -> query($sql));
+               $mysqli->close();
+               return ($username == $record[0])?'false':'true';
+
+          }
 	}
 ?>

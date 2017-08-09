@@ -41,7 +41,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Sign UP!</h3>
         </div>
-        <form class="css_f form-horizontal" id="sigupForm" method="post">
+        <form class="css_form form-horizontal" id="sigupForm" method="post">
           <div class="form-group">
             <lable for="email" class="control-label col-sm-4">Email:</lable>
             <div class="col-sm-5">
@@ -126,6 +126,11 @@
                   regexp: /^[a-zA-Z0-9_\.]+$/,
                   message: 'The username can only consist of alphabetical, number, dot and underscore'
                 },
+                remote: {
+                    url: 'dist/sqlFunction/contrl.php',
+                    type: 'POST',
+                    message: 'The username is not available'
+                },
                 different: {
                   field: 'password',
                   message: 'The username and password cannot be the same as each other'
@@ -155,6 +160,10 @@
                 identical: {
                   field: 'password',
                   message: 'The password and its confirm must be the same'
+                },
+                different: {
+                  field: 'username',
+                  message: 'The password and password cannot be the same as each other'
                 }
               }
             }

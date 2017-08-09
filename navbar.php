@@ -69,7 +69,9 @@
 <script type="text/javascript">
   
   $(document).ready(function() {
-
+    var url = location.pathname;
+    var url_1 = "/SafeDisk/index.php";
+    var url_2 = "/SafeDisk/signup.php";
     //檢查是否已經登入
     $.ajax({
       type: "POST",
@@ -83,6 +85,18 @@
           $("#manage").hide();
           $("#signout").hide();
           $("#user").hide();
+          if(url != url_1 && url != url_2){
+            swal({ 
+              title: "You are not logged in yet", 
+              type: "warning",
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "OK", 
+              cancelButtonText: "cancel",
+              showCancelButton: false, 
+            }).then(function(){ 
+              window.location = "index.php";
+            });
+          }
 
         }else{
           $("#signup").hide();
@@ -176,8 +190,7 @@
                 type: "error",
                 text: "username or password error",
                 timer: 3000
-              },
-                function(){
+              }).then(function(){
                   window.location = "index.php";
                 },
                 function(dismiss){
