@@ -33,7 +33,6 @@
                $record = mysqli_fetch_row($mysqli->query($sql));
                $mysqli->close();
                if($record){
-                    session_start();
                     $_SESSION["member_user"]=$record[1];
                     $_SESSION["member_email"]=$record[2];
                     $_SESSION["member_phone"]=$record[3];
@@ -46,7 +45,6 @@
           }
           //check 檢查登入
           function check(){
-               session_start();
                if(isset($_SESSION["member_user"])){
                     return $_SESSION["member_user"];
                }else{

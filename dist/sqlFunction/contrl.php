@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	  require_once 'memberFunction.php';
       
     //ajax:將註冊資料加入資料庫[Username,Password,Email,Phonenumber]
@@ -25,5 +26,17 @@
     if(isset($_POST["addKey"])){
       $sqlin = new memberFunction;
       echo $sqlin -> addKey($_POST["addKey"]);  
+    }
+    //load:取得session:name
+    if(isset($_POST["name"])){
+      echo $_SESSION["member_user"];
+    }
+    //load:取得session:email
+    if(isset($_POST["email"])){
+      echo $_SESSION["member_email"];
+    }
+    //load:取得session:phone
+    if(isset($_POST["phone"])){
+      echo $_SESSION["member_phone"];
     }
 ?>

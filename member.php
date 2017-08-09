@@ -61,22 +61,11 @@
 
     <!--JavaScript=====================================================================-->
     <script type="text/javascript">
-      $(document).ready(function(){
-        $.ajax({
-      type: "POST",
-      url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-      dataType:'text',
-      async:false,
-      data: {getInf : 1},
-      success: function(res){
-        if(res == '1'){
-        }
-      },
-      error: function(){
-        swal("We found an error in your data.  Please return to home page and try again.", res,"error")
-      }
-    })
-      }
+      $(document).ready(function() {
+        $("#name").load("dist/sqlFunction/contrl.php",{name:1});
+        $("#email").load("dist/sqlFunction/contrl.php",{email:1});
+        $("#phone").load("dist/sqlFunction/contrl.php",{phone:1});
+      });
     </script>
   </body>
 </html>
