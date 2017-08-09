@@ -70,8 +70,8 @@
   
   $(document).ready(function() {
     var url = location.pathname;
-    var url_1 = "/SafeDisk/index.php";
-    var url_2 = "/SafeDisk/signup.php";
+    var url_1 = "/safedisk/index.php";
+    var url_2 = "/safedisk/signup.php";
     //檢查是否已經登入
     $.ajax({
       type: "POST",
