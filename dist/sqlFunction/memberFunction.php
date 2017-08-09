@@ -53,7 +53,6 @@
           }
           //signout 登出，刪除session
           function signout(){
-               session_start();
                session_destroy();
                return '1';
           }

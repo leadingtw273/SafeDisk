@@ -196,8 +196,7 @@
                       confirmButtonColor: "#DD6B55",
                       confirmButtonText: "OK!", 
                       closeOnConfirm: false
-                    },
-                    function(){
+                    }).then(function(){
                       window.location = 'index.php';
                     }
                   );

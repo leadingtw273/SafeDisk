@@ -105,27 +105,22 @@
         confirmButtonText: "signout", 
         cancelButtonText: "cancel",
         showCancelButton: true, 
-        closeOnConfirm: false, 
-        closeOnCancel: true  
-      },
-      function(isConfirm){ 
-        if (isConfirm) { 
-          $.ajax({
-            url  : "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
-            type : 'POST',
-            dataType : 'text',
-            async:false,
-            data : {signout : 1},
-            success: function(res) {
-              if(res == '1'){
-                window.location = "index.php";
-              }
-            },
-            error: function(){
-              swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+      }).then(function(){ 
+        $.ajax({
+          url  : "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+          type : 'POST',
+          dataType : 'text',
+          async:false,
+          data : {signout : 1},
+          success: function(res) {
+            if(res == '1'){
+              window.location = "index.php";
             }
-          });
-        }
+          },
+          error: function(){
+            swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+          }
+        });
       });
     });
 
@@ -196,8 +191,7 @@
                 type: "success",
                 text: "will close in 5 seconds.",
                 timer: 5000
-              },
-                function(){
+              }).then(function(){
                   window.location = "index.php";
                 },
                 function(dismiss){
