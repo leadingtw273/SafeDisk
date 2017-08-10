@@ -21,36 +21,106 @@
 
     <!--Navbar-->
     <?php include("navbar.php");?>
-
-    <!--MainPage Jumbotron-->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>SafeDisk</h1>
-        <p>Safe your disk</p>
-        <p><a class="btn btn-primary btn-lg" role="button" href="#">Lean more &raquo;</a></p>
-      </div>
-    </div>
-
-    <!--row and columns text-->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+<!--士哲改-->
+  <div class="container-fluid">
+    <div id="focusimg" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#focusimg" data-slide-to="0" class="active"></li>
+        <li data-target="#focusimg" data-slide-to="1"></li>
+        <li data-target="#focusimg" data-slide-to="2"></li>
+      </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src= "dist/images/maker.jpg" alt="SafeDisk images">
+        <div class="carousel-caption">
+          <b><h1>SafeDisk</h1></b>
+            <p>Note:If you have not yet purchased a safe flash drive please buy and then use</p>
+            <p><a class="btn btn-lg btn-primary" href="https://hackmd.io/c/Bkm88zSmb/https%3A%2F%2Fhackmd.io%2FGwJhwQwBgIwdgLQ2ARhAgLAVigTgRABwCmECAJlseSsPLrgMwDGQA%3D%3D%3D" role="button">Buy now</a></p>
         </div>
       </div>
+      <div class="item">
+        <img src="dist/images/1.jpg" alt="SafeDisk images">
+      </div>
+      <div class="item">
+        <img src="dist/images/bg2.jpg" alt="SafeDisk images">
+      </div>
     </div>
+    <a class="left carousel-control" href="#focusimg" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="right carousel-control" href="#focusimg" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="trun"></span>
+    </a>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-md-12">
+      <div class="col-md-offset-1 col-md-4">
+        <img src="dist/images/USB.png" class="img-thumbnail">
+      </div>
+
+      <div class="col-md-7" style="padding-top: 100px;">
+
+        <div class="row">
+          <div class="col-md-1" style="padding-top: 20px">
+            <span class="glyphicon glyphicon-tint" style="font-size: 50px"></span>
+          </div>
+          <div class="col-md-11">
+            <h3>公司機密資料、私密檔案、照片、想留存紀念卻害怕別人看到內容；從現在起再也不必擔心，使用安心碟讓你自己也放心。</h3>
+          </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px;">
+          <div class="col-md-1" style="padding-top: 20px">
+            <span class="glyphicon glyphicon-leaf" style="font-size: 50px"></span>
+          </div>
+          <div class="col-md-11">
+            <h3>使用者只要記得攜帶隨身碟，便能夠幫自己的資料封存，除了通過自己的認證誰都無法開啟，就算遺失也不必擔心機密外洩。</h3>
+          </div>
+        </div>
+        
+        <div class="row" style="padding-top: 20px">
+          <div class="col-md-1" style="padding-top: 20px">
+            <span class="glyphicon glyphicon-tree-deciduous" style="font-size: 50px"></span>
+          </div>
+          <div class="col-md-11">
+            <h3>將USB接上裝置；透過手機應用程式一鍵解鎖USB隨身碟，就是這麼簡單。</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-color:#ccddFF">
+  <div class="row" style="padding:100px">
+    <div class="col-md-offset-2 col-md-4">
+      <h1>SafeDisk 介紹影片</h1>
+      <h2>
+        <ul>
+          <li>簡單</li>
+          <li>快速便利</li>
+          <li>全方位的保護</li>
+        </ul>
+        </h2>
+    </div>
+    <div class="col-md-4">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DWhw4A6p2ck" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-offset-2"></div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+</div>
+
+
+
+
 
     <!--footer-->
     <?php include("footer.php");?>
