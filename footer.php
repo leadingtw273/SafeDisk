@@ -1,18 +1,17 @@
 <!-- FOOTER -->
 <footer class="footer">
-
 	<hr class="featurette-divider">
 	<div class="container-fluid" style="background-color: #f5f5f5;">
-    	<p class="pull-right"><a href="#">Back to top</a></p>
-    	<p>&copy; 2017 Company, Inc. &middot; </p>
     	<div class="row-md-3">
 			<h3>公司名稱：樹德科技大學 顏家班</h3>
 			<h3>聯絡電話：0975123456</h3>
 			<h3>電子郵件：SafeDisk@stu.edu.tw</h3>
-			<button background="dist/images/line.png"></button>
+			<button type="button" id="lineID"><img src="dist/images/line.png"></button>
 		</div>
+    	<p class="pull-right">
+    	<a href="#"><button type="button" class="glyphicon glyphicon-chevron-up"></button></a></p>
+    	<p>&copy; 2017 Company, Inc. &middot; </p>
 	</div>
-
 </footer>
 
 <style>

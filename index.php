@@ -58,72 +58,61 @@
       <div class="col-md-offset-1 col-md-4">
         <img src="dist/images/USB.png" class="img-thumbnail">
       </div>
-
-      <div class="col-md-7" style="padding-top: 100px;">
-
-        <div class="row">
-          <div class="col-md-1" style="padding-top: 20px">
-            <span class="glyphicon glyphicon-tint" style="font-size: 50px"></span>
+      <div class="col-md-7" style="padding-top: 80px;">
+        <div class ="media" style="padding:0px 20px 0px">
+          <div class="media-left media-middle">
+            <span class="glyphicon glyphicon-tint" style="font-size: 50px;"></span>
           </div>
-          <div class="col-md-11">
-            <h3>公司機密資料、私密檔案、照片、想留存紀念卻害怕別人看到內容；從現在起再也不必擔心，使用安心碟讓你自己也放心。</h3>
+          <div class="media-body">
+            <h3 class="media-heading">公司機密資料、私密檔案、照片、想留存紀念卻害怕別人看到內容；從現在起再也不必擔心，使用安心碟讓你自己也放心。</h3>
           </div>
-        </div>
-
-        <div class="row" style="padding-top: 20px;">
-          <div class="col-md-1" style="padding-top: 20px">
-            <span class="glyphicon glyphicon-leaf" style="font-size: 50px"></span>
+         </div>
+        <div class = "media" style="padding:25px 20px 25px">
+          <div class="media-left media-middle">
+            <span class="glyphicon glyphicon-leaf" style="font-size: 50px;"></span>
           </div>
-          <div class="col-md-11">
-            <h3>使用者只要記得攜帶隨身碟，便能夠幫自己的資料封存，除了通過自己的認證誰都無法開啟，就算遺失也不必擔心機密外洩。</h3>
+          <div class="media-body">
+            <h3 class="media-heading">使用者只要記得攜帶隨身碟，便能夠幫自己的資料封存，除了通過自己的認證誰都無法開啟，就算遺失也不必擔心機密外洩。</h3>
           </div>
         </div>
-        
-        <div class="row" style="padding-top: 20px">
-          <div class="col-md-1" style="padding-top: 20px">
-            <span class="glyphicon glyphicon-tree-deciduous" style="font-size: 50px"></span>
+        <div class= "media" style="padding:0px 20px 0px">
+          <div class="media-left media-middle">
+            <span class="glyphicon glyphicon-tree-deciduous" style="font-size: 50px;"></span>
           </div>
-          <div class="col-md-11">
-            <h3>將USB接上裝置；透過手機應用程式一鍵解鎖USB隨身碟，就是這麼簡單。</h3>
+          <div class="media-body">
+            <h3 class="media-heading">將USB接上裝置；透過手機應用程式一鍵解鎖USB隨身碟，就是這麼簡單。</h3>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</div>
-
-<div class="container-fluid" style="background-color:#ccddFF">
-  <div class="row" style="padding:100px">
-    <div class="col-md-offset-2 col-md-4">
-      <h1>SafeDisk 介紹影片</h1>
-      <h2>
-        <ul>
-          <li>簡單</li>
-          <li>快速便利</li>
-          <li>全方位的保護</li>
-        </ul>
+  <div class="container-fluid" style="background-color:#ccddFF">
+    <div class="row" style="padding:10px;margin:20px">
+      <div class="col-md-offset-2 col-md-4">
+        <h1>SafeDisk 介紹影片</h1>
+        <hr />
+        <h2>
+          <ul>
+            <li>簡單</li>
+            <li>快速便利</li>
+            <li>全方位的保護</li>
+          </ul>
         </h2>
-    </div>
-    <div class="col-md-4">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DWhw4A6p2ck" frameborder="0" allowfullscreen></iframe>
       </div>
+      <div class="col-md-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DWhw4A6p2ck" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-offset-2"></div>
     </div>
-    <div class="col-md-offset-2"></div>
   </div>
-</div>
-
-
-<div class="container-fluid">
-</div>
-
-
-
-
-
+  <div class="container-fluid">
+    
+  </div>
     <!--footer-->
-    <?php include("footer.php");?>
+  <?php include("footer.php");?>
+
   </body>
 </html>
 
