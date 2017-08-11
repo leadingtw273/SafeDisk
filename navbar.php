@@ -16,6 +16,8 @@
         <li><a id="register" href="disk_register.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
         <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
         <li><a id="user" href="member.php" ><span id="user_span" class="glyphicon glyphicon-user"></span></a></li>
+        <li><a id="member_page" href="member_page.php"><span class="glyphicon glyphicon-th-list"></span> Member list</a></li>
+        <li><a id="keyView_page" href="keyView_page.php"><span class="glyphicon glyphicon-th-list"></span> KeyView list</a></li>
         <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
         <li><a id="signup" href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
         <li><a id="login" href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
@@ -97,6 +99,12 @@
               window.location = "index.php";
             });
           }
+        }else if(res == 'root'){
+          $("#signup").hide();
+          $("#login").hide();
+          $("#register").hide();
+          $("#manage").hide();
+          $("#user_span").after(" "+res);
 
         }else{
           $("#signup").hide();

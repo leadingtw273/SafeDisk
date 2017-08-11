@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="dist/css/dataTables.bootstrap.min.css">
     <link href="dist/css/auto.css" rel="stylesheet">
 
     <!--CSS-->
@@ -44,8 +45,8 @@
             <tr>
               <th class="col-xs-1 col-md-1 text-center">#</th>
               <th class="col-xs-2 col-md-2 text-center">User</th>
-              <th class="col-xs-4 col-md-4 text-center">Email</th>
-              <th class="col-xs-2 col-md-2 text-center">Phone</th>
+              <th class="col-xs-4 col-md-4 text-center">Key</th>
+              <th class="col-xs-2 col-md-2 text-center">URL</th>
             </tr>
           </thead>
         </table>
@@ -60,10 +61,7 @@
       //Table Read
       $(document).ready(function() {
         var opt={
-          "paging": false,
-          "info":     false,
-          "bFilter": false,
-          "ajax":"dist/sqlFunction/table_list_data.php"
+          "ajax":"dist/sqlFunction/keyView_list.php"
         };
         $('#table_id').dataTable(opt);
       });
