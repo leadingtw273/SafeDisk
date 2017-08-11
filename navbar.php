@@ -87,6 +87,8 @@
           $("#manage").hide();
           $("#signout").hide();
           $("#user").hide();
+          $("#member_page").hide();
+          $("#keyView_page").hide();
           if(url != url_1 && url != url_2){
             swal({ 
               title: "You are not logged in yet", 
@@ -105,8 +107,9 @@
           $("#register").hide();
           $("#manage").hide();
           $("#user_span").after(" "+res);
-
         }else{
+          $("#member_page").hide();
+          $("#keyView_page").hide();
           $("#signup").hide();
           $("#login").hide();
           $("#user_span").after(" "+res);
@@ -115,8 +118,8 @@
       error: function(){
         swal("We found an error in your data.  Please return to home page and try again.", res,"error")
       }
-    })
-
+    });
+});
     //signout_set
     $('#signout').click(function(event) {
       swal({ 
@@ -147,6 +150,7 @@
     });
 
     //login_set
+  $(function() { 
     $('#loginForm').bootstrapValidator({
       message: 'This value is not valid',
       feedbackIcons: {
@@ -229,4 +233,5 @@
       });
     });
   });
-</script>
+
+  </script>

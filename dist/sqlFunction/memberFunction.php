@@ -16,7 +16,8 @@
           		return '1';
           	}else{
           		$mysqli->close();
-          		return "0";
+          		//return "0";
+                    return $sql;
           	}
 		}
           //login 登入
@@ -70,12 +71,11 @@
                $sql = "SELECT * FROM keyView WHERE keyView_key='".$addKey."'";
                $record = mysqli_fetch_array($mysqli -> query($sql));
                if($record["keyView_user"] == '' && $record["keyView_key"] == $addKey){
-                    session_start();
                     $sql = "UPDATE keyView SET keyView_user = '".$_SESSION["member_user"]."' WHERE keyView_key='".$addKey."'";
                     $mysqli->query($sql);
                     $mysqli->close();
 
-                    return '1';
+                    return $record["keyView_url"];
                }else{
                     $mysqli->close();
                     return '0';

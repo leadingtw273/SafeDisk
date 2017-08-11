@@ -8,19 +8,19 @@
     <meta name="author" content="">
     <link rel="icon" href="dist/images/usb_icon.png">
 
-    <title>SafeDisk</title>
+   <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/auto.css" rel="stylesheet">
-
+    
   </head>
 
   <body>
 
-    <!--Navbar-->
-    <?php include("navbar.php");?>
+        <?php include("navbar.php");?>
+
 <div class="container-fluid">
     <div id="focusimg" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -107,7 +107,7 @@
     </div>
   </div>
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("footer.php")?>
   </body>
 </html>
 
