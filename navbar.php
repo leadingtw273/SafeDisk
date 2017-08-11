@@ -87,6 +87,8 @@
           $("#manage").hide();
           $("#signout").hide();
           $("#user").hide();
+          $("#member_page").hide();
+          $("#keyView_page").hide();
           if(url != url_1 && url != url_2){
             swal({ 
               title: "You are not logged in yet", 
@@ -107,6 +109,8 @@
           $("#user_span").after(" "+res);
 
         }else{
+          $("#member_page").hide();
+          $("#keyView_page").hide();
           $("#signup").hide();
           $("#login").hide();
           $("#user_span").after(" "+res);

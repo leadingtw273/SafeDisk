@@ -112,23 +112,58 @@
                   closeOnConfirm: false
                 });
               }else{
+
+                var sent_url = msg;
+                var sent_key = $("#inputkey").val();
+
                 swal({
-                  title: "Success",
-                  text: "You can already use it",
-                  type: "success",
-                  showCancelButton: false, 
-                  confirmButtonColor: "#DD6B55",
-                  confirmButtonText: "OK!", 
-                  closeOnConfirm: false
-                }).then(function(){
-                  window.location = 'disk_manage.php';
+                  title:'傳送中...',
+                  allowEscapeKey: false,
+                  allowOutsideClick: false,
+                  onOpen: function(){
+                    $.ajax({
+                      type: "POST",
+                      url: "http://127.0.0.1/SafeDisk/emailSenter.php",
+                      dataType:'text',
+                      async:false,
+                      data: {sent_url : sent_url,sent_key : sent_key},
+                      success: function(msg){
+                        if(msg == '1'){
+                          swal({
+                            title: "Success",
+                            text: "You can already use it",
+                            type: "success",
+                            showCancelButton: false, 
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "OK!", 
+                          }).then(function(){
+                            window.location = 'disk_manage.php';
+                          });
+                        }else{
+                          swal(
+                            "Sent Error",
+                            "sent faill!",
+                            "error"
+                          );
+                        }
+                      },
+                      error: function(){
+                        swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+                      }
+                    })
+                  }
                 });
+                swal.showLoading();
+
+                
               }
             },
             error: function(){
               swal("We found an error in your data.  Please return to home page and try again.", res,"error")
             }
           });
+
+
         });
       });
     </script>

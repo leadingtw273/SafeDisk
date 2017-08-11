@@ -95,7 +95,7 @@
             email: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
+                  message: 'The email is required'
                 },
                 emailAddress: {
                   message: 'The input is not a valid email address'
@@ -105,7 +105,7 @@
             phone: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
+                  message: 'The phone is required'
                 },
                 digits: {
                   message: 'The value can contain only digits'
