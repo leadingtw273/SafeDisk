@@ -1,40 +1,38 @@
 <!-- FOOTER -->
-<footer class="footer">
-	<hr class="featurette-divider">
-	<div class="container-fluid" style="background-color: #f5f5f5;">
-    	<div class="row-md-3">
-			<h3>公司名稱：樹德科技大學 顏家班</h3>
-			<h3>聯絡電話：0975123456</h3>
-			<h3>電子郵件：SafeDisk@stu.edu.tw</h3>
-			<button type="button" id="lineID"><img src="dist/images/line.png"></button>
-		</div>
-    	<p class="pull-right">
-    	<a href="#"><button type="button" class="glyphicon glyphicon-chevron-up"></button></a></p>
-    	<p>&copy; 2017 Company, Inc. &middot; </p>
-	</div>
-</footer>
+	<footer class="footer">
+		<p class="pull-right">
+		<a id="FaceBook"><i class="fa fa-facebook-square smalltag" style="font-size:30px"></i></a>
+		<a id="Instagram"><i class="fa fa-instagram smalltag" style="font-size:30px"></i></a>
+		<a id="Twitter"><i class="fa fa-twitter-square smalltag" style="font-size:30px"></i></a>
+		<a href="#"><button type="button" class="glyphicon glyphicon-chevron-up"></button></a></p>
+		<p>&copy; 2017 Company, Inc. &middot; | 安心碟、網頁設計 </p>
+	</footer>
 
-<style>
-	
+<style>	
+.smalltag{
+	padding-right: 5px;
+
+}
 .footer{
 	position: absolute;
+	bottom:0px;
   	width: 100%;
   	/* Set the fixed height of the footer here */
-  	height: 60px;
-  	background-color: #f5f5f5;
+  	height: 40px;
+  	background-color: #333333;
 }
-
+.footer p{
+	color: #EEEEEE;
+	padding:5px 2px 0px;
+}
 @media (min-width: 992px ){
 	.footer{
-		bottom: 0%;
+		bottom: 0px;
 	}
-
-}
-
 </style>
+
 <script type="text/javascript" charset="utf-8">
-	$("#lineID").click(function() {
-		swal({imageUrl:'dist/images/+line.jpg'})
-		/* Act on the event */
-	});
+  $("#lineID").click(function() {
+    swal({imageUrl:'dist/images/+line.jpg'})
+ 	});
 </script>

@@ -9,19 +9,20 @@
     <link rel="icon" href="dist/images/usb_icon.png">
 
    <title>SafeDisk</title>
-
+<?php include('move_button.php');?>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/auto.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
 
         <?php include("navbar.php");?>
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding:1px 0px 0px">
     <div id="focusimg" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#focusimg" data-slide-to="0" class="active"></li>
@@ -88,15 +89,15 @@
   <div class="container-fluid" style="background-color:#ccddFF">
     <div class="row" style="padding:10px;margin:20px">
       <div class="col-md-offset-2 col-md-4">
-        <h1>SafeDisk 介紹影片</h1>
+        <b><h2>SafeDisk<small>介紹影片</small></h2></b>
         <hr />
-        <h2>
+        <h3>
           <ul>
             <li>簡單</li>
             <li>快速便利</li>
             <li>全方位的保護</li>
           </ul>
-        </h2>
+        </h3>
       </div>
       <div class="col-md-4">
         <div class="embed-responsive embed-responsive-16by9">
@@ -106,8 +107,27 @@
       <div class="col-md-offset-2"></div>
     </div>
   </div>
+
+
+
+  <div class="container-fluid" style="background-color: #666666;padding-bottom: 50px" >
+      <div class="row">
+        <div class="col-md-offset-1 col-md-3">
+          <h4>公司名稱：樹德科技大學 顏家班</h4>
+          <h4>聯絡電話：0975123456</h4>
+          <h4>電子郵件：SafeDisk@stu.edu.tw</h4>
+          <a id="lineID"><img src="dist/images/line.png"></a>
+        </div>
+        <div class="col-md-8">
+          <a href="mailto:leadingtw@gmail.com?subject=Hello%20SafeDisk">
+            <button class="move_button" type="email" style="width: 900px ;height:130px;"><span>和我們聯絡 </span></button>
+          </a>
+        </div>
+      </div>
+  </div>
     <!--footer-->
     <?php include("footer.php")?>
   </body>
 </html>
+
 

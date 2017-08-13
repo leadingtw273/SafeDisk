@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrapValidator.min.css" >
     <link href="dist/css/auto.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--CSS-->
     <style>
       .css_pan{
@@ -39,7 +39,7 @@
     <div class="container col-md-8 col-md-offset-2 css_pan">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Sign UP!</h3>
+          <h3 class="panel-title">註冊</h3>
         </div>
         <form class="css_form form-horizontal" id="sigupForm" method="post">
           <div class="form-group">
@@ -95,75 +95,71 @@
             email: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
+                  message: '請輸入Email'
                 },
                 emailAddress: {
-                  message: 'The input is not a valid email address'
+                  message: '請正確輸入 Email 格式'
                 }
               }
             },
             phone: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
+                  message: '請輸入正確行動電話號碼'
                 },
                 digits: {
-                  message: 'The value can contain only digits'
+                  message: '請輸入正確行動電話號碼'
                 }
               }
             },
             username: {
               validators: {
                 notEmpty: {
-                  message: 'The username is required'
+                  message: '請輸入使用者帳號'
                 },
                 stringLength: {
                   min: 6,
                   max: 30,
-                  message: 'The username must be more than 6 and less than 30 characters long'
+                  message: '帳號需介於 6 至 30 之間；建議使用英文、數字混和增加帳號強度'
                 },
                 regexp: {
                   regexp: /^[a-zA-Z0-9_\.]+$/,
-                  message: 'The username can only consist of alphabetical, number, dot and underscore'
+                  message: '不可使用英文、數字以外的字元'
                 },
                 remote: {
                     url: 'dist/sqlFunction/contrl.php',
                     type: 'POST',
-                    message: 'The username is not available'
+                    message: '此帳號不可用'
                 },
                 different: {
                   field: 'password',
-                  message: 'The username and password cannot be the same as each other'
+                  message: '帳號和密碼不能相同'
                 }
               }
             },
             password: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
-                },
-                identical: {
-                  field: 'verifypassword',
-                  message: 'The password and its confirm must be the same'
+                  message: '請輸入密碼'
                 },
                 different: {
                   field: 'username',
-                  message: 'The password and password cannot be the same as each other'
+                  message: '帳號和密碼不可相同'
                 }
               }
             },
             verifypassword: {
               validators: {
                 notEmpty: {
-                  message: 'The password is required'
+                  message: '請重複輸入密碼'
                 },
                 identical: {
                   field: 'password',
-                  message: 'The password and its confirm must be the same'
+                  message: '與密碼不同，請確認輸入密碼是否正確'
                 },
                 different: {
                   field: 'username',
-                  message: 'The password and password cannot be the same as each other'
+                  message: '帳號和密碼不可相同'
                 }
               }
             }

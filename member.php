@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/auto.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
 
     <!--CSS-->
     <style>
@@ -21,44 +23,47 @@
         border-radius:10px;
         padding-top: 50px;
       }
+      .css_word{
+        text-align: center;
+      }
+      .css_edit{
+         font-size: 20px;
+         padding-top: 8px;
+      }
     </style>
-
   </head>
-
   <body>
-
-    <!--Navbar-->
+      <!--Navbar-->
     <?php include("navbar.php");?>
-
-    <!--Panel-->
-    <div class="container col-md-8 col-md-offset-2 css_pan">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <p class="panel-title text-center"><a style="font-size: 36px;">User information</a></p>
-        </div>
-        <table class="table table-bordered table-hover table-striped w">
-           <tr>
-              <td class="col-sm-4"><h4>User Name：</h4></td>
-              <td class="col-sm-8"><h4 id="name">NULL</h4></td>
-           </tr> 
-           <tr>
-              <td><h4>User Email：</h4></td>
-              <td><h4 id="email">NULL</h4></td>
-           </tr> 
-           <tr>
-            <td><h4>User Phone：</h4></td>
-            <td><h4 id="phone">NULL</h4></td>
-           </tr>
+      <!--Panel-->
+    <div class="container-fluid css_pan">
+      <div class=" col-md-8 col-md-offset-2 ">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <p class="panel-title text-center"><a style="font-size: 60px;font-family: Brush Script MT">Account information</a></p>
+          </div>
+          <table class="table table-bordered table-hover table-striped">
+             <tr>
+                <td class="col-sm-4 css_word" ><h4>Name：</h4></td>
+                <td class="col-sm-8"><h4 id="name">NULL</h4></td>
+                <td><button class="glyphicon glyphicon-edit css_edit"></button></td>
+             </tr> 
+             <tr>
+                <td class="css_word"><h4>Email：</h4></td>
+                <td><h4 id="email">NULL</h4></td>
+                <td><button class="glyphicon glyphicon-edit css_edit"></button></td>
+             </tr> 
+             <tr>
+              <td class="css_word"><h4>Phone：</h4></td>
+              <td><h4 id="phone">NULL</h4></td>
+              <td><button class="glyphicon glyphicon-edit css_edit"></button></td>
+             </tr>
           </table>
-        <div>
-
         </div>
       </div>
     </div>
-
     <!--footer-->
     <?php include("footer.php");?>
-
     <!--JavaScript=====================================================================-->
     <script type="text/javascript">
       $(document).ready(function() {

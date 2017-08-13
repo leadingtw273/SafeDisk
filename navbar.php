@@ -71,6 +71,16 @@
 <script type="text/javascript">
   
   $(document).ready(function() {
+    $("#register").hide();
+    $("#manage").hide();
+    $("#user").hide();
+    $("#member_page").hide();
+    $("#keyView_page").hide();
+    $("#signout").hide();
+    $("#signup").hide();
+    $("#login").hide();
+    $("#about").hide();
+
     var url = location.pathname;
     var url_1 = "/SafeDisk/index.php";
     var url_2 = "/SafeDisk/signup.php";
@@ -85,10 +95,13 @@
         if(res == '1'){
           $("#register").hide();
           $("#manage").hide();
-          $("#signout").hide();
           $("#user").hide();
           $("#member_page").hide();
           $("#keyView_page").hide();
+          $("#signout").hide();
+          $("#signup").fadeIn();
+          $("#login").fadeIn();
+          $("#about").fadeIn();
           if(url != url_1 && url != url_2){
             swal({ 
               title: "You are not logged in yet", 
@@ -102,16 +115,26 @@
             });
           }
         }else if(res == 'root'){
-          $("#signup").hide();
-          $("#login").hide();
           $("#register").hide();
           $("#manage").hide();
-          $("#user_span").after(" "+res);
-        }else{
-          $("#member_page").hide();
-          $("#keyView_page").hide();
+          $("#user").fadeIn();
+          $("#member_page").fadeIn();
+          $("#keyView_page").fadeIn();
+          $("#signout").fadeIn();
           $("#signup").hide();
           $("#login").hide();
+          $("#about").fadeIn();
+          $("#user_span").after(" "+res);
+        }else{
+          $("#register").fadeIn();
+          $("#manage").fadeIn();
+          $("#user").fadeIn();
+          $("#member_page").hide();
+          $("#keyView_page").hide();
+          $("#signout").fadeIn();
+          $("#signup").hide();
+          $("#login").hide();
+          $("#about").fadeIn();
           $("#user_span").after(" "+res);
         }
       },

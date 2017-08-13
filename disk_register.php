@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrapValidator.min.css" >
     <link href="dist/css/auto.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--CSS-->
     <style>
       .css_pan{
@@ -39,8 +39,9 @@
     <?php include("navbar.php");?>
     
     <!--Panel-->
-    <div class="container col-md-8 col-md-offset-2 css_pan">
-      <div class="panel panel-default">
+  <div class="container">
+    <div class=" col-md-8 col-md-offset-2 css_pan">
+      <div class="panel panel-info">
         <div class="panel-heading">
           <p class="panel-title text-center"><a style="font-size: 36px;">Register</a></p>
         </div>
@@ -55,7 +56,7 @@
         </form>
       </div>
     </div>
-
+  </div>
     <!--footer-->
     <?php include("footer.php");?>
 
