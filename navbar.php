@@ -1,3 +1,14 @@
+    <style>
+      .中文字體,h4{
+        font-family: "微軟正黑體";
+      }
+      .英文字體{
+        font-family: "Edwardian Script ITC";
+      }
+    
+    </style>
+
+<?php include('move_button.php');?>
 <!--navbar-->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -13,14 +24,14 @@
     <!--navbar-body-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="register" href="disk_register.php"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-        <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> Manage</a></li>
+        <li><a id="register" data-toggle="modal" data-target="#registerUSB"><span class="glyphicon glyphicon-plus"></span> 新增裝置</a></li>
+        <li><a id="manage" href="disk_manage.php"><span class="glyphicon glyphicon-th"></span> 裝置管理</a></li>
         <li><a id="user" href="member.php" ><span id="user_span" class="glyphicon glyphicon-user"></span></a></li>
-        <li><a id="member_page" href="member_page.php"><span class="glyphicon glyphicon-th-list"></span> Member list</a></li>
-        <li><a id="keyView_page" href="keyView_page.php"><span class="glyphicon glyphicon-th-list"></span> KeyView list</a></li>
-        <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
-        <li><a id="signup" href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-        <li><a id="login" href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+        <li><a id="member_page" href="member_page.php"><span class="glyphicon glyphicon-th-list"></span> 使用者清單</a></li>
+        <li><a id="keyView_page" href="keyView_page.php"><span class="glyphicon glyphicon-th-list"></span> 金鑰管理</a></li>
+        <li><a id="signout" href="#"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
+        <li><a id="signup" data-toggle="modal" data-target="#modalsignup"><span class="glyphicon glyphicon-user"></span> 註冊</a></li>
+        <li><a id="login" href="#login" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
         <li><a id="about" href="#about" ><span class="glyphicon glyphicon-wrench"></span> About</a></li>
       </ul> 
     </div>     
@@ -28,31 +39,39 @@
 </nav> 
 
 <!--Modal-->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog" style="padding-top:10%">
   <div class="modal-dialog">
-
-    <!-- Login Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Login</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title">會員登入</h4>
       </div>
       <div class="modal-body">
-        <form id="loginForm">
-          <label for="username">Username:</label>
-          <div class="form-group input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" class="form-control" id="username" placeholder="Enter your username">
-          </div>
-          <label for="pwd">Password:</label>
-          <div class="form-group input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
+        <form id="loginForm" class="form-horizontal">
+          <label for="username" class="col-sm-3 control-label">帳號：</label>
+            <div class="form-group input-group col-sm-6">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" class="form-control" id="username" placeholder="輸入登入帳號">
             </div>
-          <button type="submit" class="btn btn-default">Login</button>
+            <div class="col-sm-offset-3"></div>
+          <label for="pwd" class="col-sm-3 control-label">密碼：</label>
+            <div class="form-group input-group col-sm-6">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" class="form-control" id="pwd" placeholder="輸入登入密碼">
+            </div>
+            <div class="col-sm-offset-3">
+          </div>
+          <div class="col-sm-offset-2 col-sm-3">
+            <div class="checkbox">
+              <label><input type="checkbox"> 記住帳密</label>
+            </div>
+          </div>
+          <label class="col-sm-4 control-label"><a href="registered.php">註冊</a>或<a href="#">忘記密碼</a>??</label>
+          <div class="form-group">
+            <div class=" col-sm-offset-4 col-sm-8" style="padding-top: 20px">
+              <button type="submit" class="move_button" style="width: 100px ;height:40px;font-size: 20px;background-color:#0066FF"><span>登入 </span></button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -60,7 +79,6 @@
   </div>
 </div>
 
-<!--include JS-->
 <script src="dist/js/jquery.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <script src="dist/plug/sweetalert2/dist/sweetalert2.min.js"></script> 
@@ -80,7 +98,8 @@
     $("#signup").hide();
     $("#login").hide();
     $("#about").hide();
-
+});
+  $(document).ready(function(){
     var url = location.pathname;
     var url_1 = "/SafeDisk/index.php";
     var url_2 = "/SafeDisk/signup.php";
@@ -146,12 +165,12 @@
     //signout_set
     $('#signout').click(function(event) {
       swal({ 
-        title: "Are you sure you want to log out?", 
-        text: "You will lose all your current actions back to the home page", 
-        type: "warning",
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "signout", 
-        cancelButtonText: "cancel",
+        title: "即將登出", 
+        text: "記得時常回來關心最新消息呦", 
+        type: "info",
+        confirmButtonColor: "#33cccc",
+        confirmButtonText: "確定", 
+        cancelButtonText: "取消",
         showCancelButton: true, 
       }).then(function(){ 
         $.ajax({
@@ -185,14 +204,14 @@
         username: {
           validators: {
             notEmpty: {
-              message: 'The username is required'
+              message: '請正確的輸入帳號'
             }
           }
         },
         password: {
           validators: {
             notEmpty: {
-              message: 'The password is required'
+              message: '請正確輸入密碼'
             }
           }
         }
@@ -221,9 +240,9 @@
           switch(res){
             case '0':
               swal({
-                title: "Login Error",
+                title: "登入失敗",
                 type: "error",
-                text: "username or password error",
+                text: "輸入的帳號或密碼有錯",
                 timer: 3000
               }).then(function(){
                   window.location = "index.php";
@@ -258,3 +277,5 @@
   });
 
   </script>
+  <?php include('disk_register.php');?>
+  <?php include('signup.php');?>

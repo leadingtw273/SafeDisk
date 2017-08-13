@@ -14,7 +14,9 @@
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/dataTables.bootstrap.min.css">
-    <link href="dist/css/auto.css" rel="stylesheet">
+    <link href="dist/css/auto.css" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!--CSS-->
     <style>
@@ -117,7 +119,6 @@
         var qr_url = $(this).data("url");
         swal({
           title: 'QR code',
-          text: 'Scan and download',
           imageUrl: 'http://chart.apis.google.com/chart?cht=qr&chl='+ qr_url +'&chs=160x160&chld=L|0',
           animation: false
         },

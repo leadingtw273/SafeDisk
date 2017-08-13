@@ -9,7 +9,6 @@
     <link rel="icon" href="dist/images/usb_icon.png">
 
    <title>SafeDisk</title>
-<?php include('move_button.php');?>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -110,7 +109,7 @@
 
 
 
-  <div class="container-fluid" style="background-color: #666666;padding-bottom: 50px" >
+  <div class="container-fluid" style="background-color: #666666;padding:20px 0px 70px" >
       <div class="row">
         <div class="col-md-offset-1 col-md-3">
           <h4>公司名稱：樹德科技大學 顏家班</h4>
@@ -120,13 +119,19 @@
         </div>
         <div class="col-md-8">
           <a href="mailto:leadingtw@gmail.com?subject=Hello%20SafeDisk">
-            <button class="move_button" type="email" style="width: 900px ;height:130px;"><span>和我們聯絡 </span></button>
+            <button class="move_button" type="email" style="width: 90% ;height:130px;"><span>和我們聯絡 </span></button>
           </a>
         </div>
       </div>
   </div>
     <!--footer-->
     <?php include("footer.php")?>
+
+    <script type="text/javascript" charset="utf-8">
+      $("#lineID").click(function() {
+        swal({imageUrl:'dist/images/+line.jpg'})
+      });
+    </script>
   </body>
 </html>
 

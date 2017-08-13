@@ -6,8 +6,8 @@
   color: #FFFFFF;//文字顏色
   text-align: center;
   font-size: 28px;
-  padding: 20px;
-  width: 300px;
+  padding: 5px;
+  width: 100px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
