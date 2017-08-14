@@ -42,7 +42,7 @@
  
           <h3>User Menage</h3>
         
-        <table class="css_table table_class table table-striped table-bordered table-responsive" id="table_id">
+        <table class="css_table table_class table table-striped table-bordered table-responsive table-hover" id="table_id">
           <thead>
             <tr>
               <th class="col-xs-1 col-md-1 text-center"></th>

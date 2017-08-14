@@ -43,7 +43,7 @@
         <div>
           <h3>User Menage</h3>
         </div>
-        <table class="css_table table-bordered  table_class table table-striped table-responsive" id="table_id">
+        <table class="css_table table-bordered  table_class table table-striped table-responsive table-hover" id="table_id">
           <thead>
             <tr>
               <th class="col-xs-1 col-md-1 text-center"><span class="glyphicon glyphicon-tasks css_imgleft"></span></th>
