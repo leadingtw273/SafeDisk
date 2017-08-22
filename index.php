@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/auto.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
@@ -21,7 +21,7 @@
 
         <?php include("navbar.php");?>
 
-<div class="container-fluid" style="padding:1px 0px 0px">
+<div class="container-fluid" style="padding:0px 0px 0px">
     <div id="focusimg" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#focusimg" data-slide-to="0" class="active"></li>
@@ -132,6 +132,7 @@
         swal({imageUrl:'dist/images/+line.jpg'})
       });
     </script>
+    
   </body>
 </html>
 

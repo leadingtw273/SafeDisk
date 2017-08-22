@@ -17,6 +17,10 @@
     <link href="dist/css/auto.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link href="dist/js/dateTable/buttons.dataTables.min.css">
+    <link href="dist/js/dateTable/editor.dataTables.min.css">
+    <link href="dist/js/dateTable/select.dataTables.min.css">
+    -->
     <!--CSS-->
     <style>
       .css_table{
@@ -58,17 +62,76 @@
     <!--footer-->
     <?php include("footer.php");?>
 
-    <!--JavaScript=====================================================================-->
+    <!--JavaScript=====================================================================-->  
+    <script type="text/javascript" language="javascript" src="dist/js/dataTables.bootstrap.js"></script> 
+   <!-- <script type="text/javascript" src="dist/js/dateTable/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="dist/js/dateTable/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="dist/js/dateTable/dataTables.editor.min.js"></script>-->
     <script type="text/javascript" charset="utf-8">
 
       //Table Read
-      $(document).ready(function() {
+    $(document).ready(function() {
         var opt={
           "ajax":"dist/sqlFunction/member_list.php"
         };
-        $('#table_id').dataTable(opt);
-      });
-      
+ $('#table_id').dataTable(opt);
+    });
+ /* 
+
+      var editor; // use a global for the submit and return data rendering in the examples  table: "#example",
+ 
+$(document).ready(function() {
+    editor = new $.fn.dataTable.Editor( {
+        ajax: "datetabletoSQL.php",
+        table: "#table_id",
+        fields: [ {
+                label: "使用者名稱:",
+                name: "user"
+            }, {
+                label: "Email:",
+                name: "email"
+            }, {
+                label: "Phone:",
+                name: "phone"
+            }
+        ]
+    } );
+ 
+    $('#table_id').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this, {
+            submit: 'allIfChanged'
+        } );
+    } );
+ 
+    $('#table_id').DataTable( {
+        dom: "Bfrtip",
+        ajax: "datetabletoSQL.php",
+        columns: [
+            {
+                data: null,
+                defaultContent: '',
+                className: 'select-checkbox',
+                orderable: false
+            },
+            { data: "user" },
+            { data: "email" },
+            { data: "phone" },
+            //{ data: "office" },
+            //{ data: "start_date" },
+            //{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+        ],
+        order: [ 1, 'asc' ],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+} );*/
     </script>
   </body>
 </html>

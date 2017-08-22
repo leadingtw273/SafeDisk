@@ -14,7 +14,8 @@
 	padding-right: 5px;
 }
 .footer{
-	position: absolute;
+	position: fixed;
+    bottom: 0;
   	width: 100%;
   	/* Set the fixed height of the footer here */
   	height: 40px;

@@ -43,21 +43,21 @@
               </div>
               <div class="col-sm-offset-1"></div>
             </div>
-            <div class="form-group" id='notrobot'>
+            <!--<div class="form-group" id='notrobot'>
               <div class="col-sm-offset-3 col-sm-9">
                 <label>
                   <div class="g-recaptcha" id="norobot" data-sitekey="6Le9tisUAAAAAJPbIUjZpco-1JdFxq0vY6QEdBg4"></div>
                 </label>
               </div>
-            </div>
+            </div>-->
             <button type="submit" class="btn btn-primary center-block">註冊</button>
           </form>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-    <!--JavaScript=====================================================================-->
-  <script src='dist/js/api.js' async defer></script>
+    <!--JavaScript=====================================================================
+  <script src='dist/js/api.js'></script>-->
    <script type="text/javascript">
       $ (document).ready(function() {
         $("#span_notrobot").hide();
@@ -190,7 +190,7 @@
               });//close ajax
         });
       });
-
+/*
 function VerifyReCaptcha(GResponse){ //我不是機器人認證函數
   $.ajax(
   {
@@ -228,5 +228,5 @@ $(document).ready (function(){
       clearInterval(IntervalID);
     }
   },1000);
-});
+});*/
     </script>

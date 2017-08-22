@@ -58,6 +58,7 @@
     <?php include("footer.php");?>
 
     <!--JavaScript=====================================================================-->
+    <script type="text/javascript" language="javascript" src="dist/js/dataTables.bootstrap.js"></script>
     <script type="text/javascript" charset="utf-8">
 
       //Table Read

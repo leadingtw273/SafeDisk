@@ -5,12 +5,19 @@
       .英文字體{
         font-family: "Edwardian Script ITC";
       }
-    
     </style>
+  <!--   .bgnoshow:hover{
+        background-color: rgba(0,0,0,0);
+        font-size: 20px;
+        font-family: "微軟正黑體";
+        padding:0px 0px 0px;
+        min-height: 0px;
+        margin-bottom: 0px;
+        border-width: 0px;
+      }-->
 
-<?php include('move_button.php');?>
 <!--navbar-->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation" id="topnavbar">
   <div class="container">
     <!--navbar-header-->
     <div class="navbar-header">
@@ -79,12 +86,13 @@
   </div>
 </div>
 
+<?php include('move_button.php');?>
+
 <script src="dist/js/jquery.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <script src="dist/plug/sweetalert2/dist/sweetalert2.min.js"></script> 
 <script src="dist/js/bootstrapValidator.min.js"></script> 
 <script src="dist/js/jquery.dataTables.min.js"></script> 
-
 <!--set navbar option-->
 <script type="text/javascript">
   
@@ -98,8 +106,7 @@
     $("#signup").hide();
     $("#login").hide();
     $("#about").hide();
-});
-  $(document).ready(function(){
+
     var url = location.pathname;
     var url_1 = "/SafeDisk/index.php";
     var url_2 = "/SafeDisk/signup.php";
@@ -275,6 +282,7 @@
       });
     });
   });
+
 
   </script>
   <?php include('disk_register.php');?>
