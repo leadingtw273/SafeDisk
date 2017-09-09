@@ -28,7 +28,7 @@
   <body>
 
     <!--Navbar-->
-    <?php include("navbar.php");?>
+    <?php include("page_navbar.php");?>
 
     <!--Panel-->
     <div class="container col-md-8 col-md-offset-2 css_pan">
@@ -57,14 +57,30 @@
     </div>
 
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("page_footer.php");?>
 
     <!--JavaScript=====================================================================-->
     <script type="text/javascript">
       $(document).ready(function() {
-        $("#name").load("dist/sqlFunction/contrl.php",{name:1});
-        $("#email").load("dist/sqlFunction/contrl.php",{email:1});
-        $("#phone").load("dist/sqlFunction/contrl.php",{phone:1});
+
+        $.ajax({
+          type: "POST",
+          url: location.origin+"/dist/sqlFunction/contrl.php",
+          dataType:'text',
+          async:false,
+          data: {userInfo : 1},
+          success: function(res){
+            var obj = JSON.parse(res);
+            $("#name").text(obj.user);
+            $("#email").text(obj.email);
+            $("#phone").text(obj.phone);
+          },
+          error: function(){
+            swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+          }
+        });
+
+
       });
     </script>
   </body>

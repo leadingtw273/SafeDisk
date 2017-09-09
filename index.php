@@ -20,7 +20,7 @@
   <body>
 
     <!--Navbar-->
-    <?php include("navbar.php");?>
+    <?php include("page_navbar.php");?>
 
     <!--MainPage Jumbotron-->
     <div class="jumbotron">
@@ -53,7 +53,7 @@
     </div>
 
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("page_footer.php");?>
   </body>
 </html>
 

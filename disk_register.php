@@ -36,7 +36,7 @@
   <body>
 
     <!--Navbar-->
-    <?php include("navbar.php");?>
+    <?php include("page_navbar.php");?>
     
     <!--Panel-->
     <div class="container col-md-8 col-md-offset-2 css_pan">
@@ -57,7 +57,7 @@
     </div>
 
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("page_footer.php");?>
 
     <!--JavaScript=====================================================================-->
     <script type="text/javascript">
@@ -96,7 +96,7 @@
 
           $.ajax({
             type: "POST",
-            url: "http://127.0.0.1/SafeDisk/dist/sqlFunction/contrl.php",
+            url: location.origin+"/dist/sqlFunction/contrl.php",
             dataType:'text',
             async:false,
             data: {addKey : key},
@@ -123,7 +123,7 @@
                   onOpen: function(){
                     $.ajax({
                       type: "POST",
-                      url: "http://127.0.0.1/SafeDisk/emailSenter.php",
+                      url: location.origin+"/emailSenter.php",
                       dataType:'text',
                       async:false,
                       data: {sent_url : sent_url,sent_key : sent_key},

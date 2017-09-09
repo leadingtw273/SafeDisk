@@ -33,7 +33,7 @@
   <body>
 
     <!--Navbar-->
-    <?php include("navbar.php");?>
+    <?php include("page_navbar.php");?>
 
     <!--Table-->
     <div class="container table-responsive">
@@ -54,7 +54,7 @@
     </div>
 
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("page_footer.php");?>
 
     
     <!--JavaScript=====================================================================-->
@@ -64,9 +64,9 @@
       $(document).ready(function() {
         var opt={
           "paging": false,
-          "info":     false,
+          "info":    false,
           "bFilter": false,
-          "ajax":"dist/sqlFunction/table_list_data.php"
+          "ajax": location.origin+"/dist/sqlFunction/disk_keyList.php"
         };
         $('#table_id').dataTable(opt);
       });
@@ -83,7 +83,7 @@
           onOpen: function(){
             $.ajax({
               type: "POST",
-              url: "http://127.0.0.1/SafeDisk/emailSenter.php",
+              url: mainUrl+"/emailSenter.php",
               dataType:'text',
               async:false,
               data: {sent_url : sent_url,sent_key : sent_key},

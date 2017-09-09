@@ -33,16 +33,13 @@
       $isAvailable = $sqlin -> checkUsername($_POST["username"]);
       echo json_encode(array('valid' => $isAvailable,));
     }
-    //load:取得session:name
-    if(isset($_POST["name"])){
-      echo $_SESSION["member_user"];
-    }
-    //load:取得session:email
-    if(isset($_POST["email"])){
-      echo $_SESSION["member_email"];
-    }
-    //load:取得session:phone
-    if(isset($_POST["phone"])){
-      echo $_SESSION["member_phone"];
+    //ajax:取得userInfo
+    if(isset($_POST["userInfo"])){
+      $info = [
+      "user"  => $_SESSION["member_user"],
+      "email" => $_SESSION["member_email"],
+      "phone" => $_SESSION["member_phone"]
+      ];
+      echo json_encode($info);
     }
 ?>

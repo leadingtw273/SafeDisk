@@ -33,7 +33,7 @@
   <body>
 
     <!--Navbar-->
-    <?php include("navbar.php");?>
+    <?php include("page_navbar.php");?>
 
     <!--Table-->
     <div class="container table-responsive">
@@ -53,7 +53,7 @@
     </div>
 
     <!--footer-->
-    <?php include("footer.php");?>
+    <?php include("page_footer.php");?>
 
     <!--JavaScript=====================================================================-->
     <script type="text/javascript" charset="utf-8">
@@ -61,7 +61,7 @@
       //Table Read
       $(document).ready(function() {
         var opt={
-          "ajax":"dist/sqlFunction/member_list.php"
+          "ajax":"dist/sqlFunction/root_member_list.php"
         };
         $('#table_id').dataTable(opt);
       });
