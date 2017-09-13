@@ -10,11 +10,8 @@
 
    <title>SafeDisk</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/css/auto.css" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php include("fileofcss.php");?>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css"> <!--不可規格不一不可刪除待解決-->
   </head>
 
   <body>
