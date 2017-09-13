@@ -83,7 +83,7 @@
           onOpen: function(){
             $.ajax({
               type: "POST",
-              url: mainUrl+"/emailSenter.php",
+              url: location.origin+"/emailSenter.php",
               dataType:'text',
               async:false,
               data: {sent_url : sent_url,sent_key : sent_key},
@@ -103,7 +103,7 @@
                 }
               },
               error: function(){
-                swal("We found an error in your data.  Please return to home page and try again.", res,"error")
+                swal("We found an error in your data.  Please return to home page and try again.", msg,"error")
               }
             })
           }
