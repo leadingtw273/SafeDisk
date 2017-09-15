@@ -93,7 +93,6 @@
           //alert("made it to submit handler block!");
           var key = document.getElementById("inputkey").value;
 
-
           $.ajax({
             type: "POST",
             url: location.origin+"/dist/sqlFunction/contrl.php",
