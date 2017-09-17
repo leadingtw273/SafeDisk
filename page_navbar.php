@@ -101,25 +101,24 @@
 </div>
 
 <!--include JS-->
-
+<script type="text/javascript" src="dist/js/jquery.min.js"></script>
 <script type="text/javascript" src="dist/js/define.js"></script>
-<script src="dist/js/jquery.min.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/plug/sweetalert2/dist/sweetalert2.min.js"></script> 
-<script src="dist/js/bootstrapValidator.min.js"></script> 
-<script src="dist/js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.0/sweetalert2.min.js"></script> 
+<script type="text/javascript" src="dist/js/bootstrapValidator.min.js"></script> 
+<script type="text/javascript" src="dist/js/jquery.dataTables.min.js"></script> 
 
 <!--set navbar option-->
 <script type="text/javascript">
   
   $(document).ready(function() {
     var url = location.pathname;
-    var url_1 = "/index.php";
-    var url_2 = "/signup.php";
+    var url_1 = "/SafeDisk_test/index.php";
+    var url_2 = "/SafeDisk_test/signup.php";
     //檢查是否已經登入
     $.ajax({
       type: "POST",
-      url: location.origin+"/dist/sqlFunction/contrl.php",
+      url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
       dataType:'text',
       async:false,
       data: {check : 1},
@@ -172,7 +171,7 @@
       }).then(function(){ 
         $.ajax({
           type : 'POST',
-          url  : location.origin+"/dist/sqlFunction/contrl.php",
+          url  : location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
           dataType : 'text',
           async:false,
           data : {signout : 1},
@@ -290,7 +289,7 @@
 
       $.ajax({
         type: "POST",
-        url: location.origin+"/dist/sqlFunction/contrl.php",
+        url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
         dataType:'text',
         async:false,
         data: { 
@@ -357,7 +356,7 @@
 
       $.ajax({
         type: "POST",
-        url: location.origin+"/dist/sqlFunction/contrl.php",
+        url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
         dataType:'text',
         async:false,
         data: { 

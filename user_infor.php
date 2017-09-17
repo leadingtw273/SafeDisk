@@ -11,9 +11,9 @@
     <title>SafeDisk</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="dist/plug/sweetalert2/dist/sweetalert2.css">
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/css/auto.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.0/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/auto.css">
 
     <!--CSS-->
     <style>
@@ -65,7 +65,7 @@
 
         $.ajax({
           type: "POST",
-          url: location.origin+"/dist/sqlFunction/contrl.php",
+          url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
           dataType:'text',
           async:false,
           data: {userInfo : 1},
