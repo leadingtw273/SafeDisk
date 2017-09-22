@@ -83,7 +83,7 @@
           onOpen: function(){
             $.ajax({
               type: "POST",
-              url: location.origin+"/emailSenter.php",
+              url: location.origin+"/SafeDisk_test/emailSenter.php",
               dataType:'text',
               async:false,
               data: {sent_url : sent_url,sent_key : sent_key},
