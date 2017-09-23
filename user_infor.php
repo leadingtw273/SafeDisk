@@ -65,7 +65,7 @@
 
         $.ajax({
           type: "POST",
-          url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
+          url: location.origin+"/dist/sqlFunction/contrl.php",
           dataType:'text',
           async:false,
           data: {userInfo : 1},

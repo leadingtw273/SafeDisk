@@ -118,7 +118,7 @@
     //檢查是否已經登入
     $.ajax({
       type: "POST",
-      url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
+      url: location.origin+"/dist/sqlFunction/contrl.php",
       dataType:'text',
       async:false,
       data: {check : 1},
@@ -171,7 +171,7 @@
       }).then(function(){ 
         $.ajax({
           type : 'POST',
-          url  : location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
+          url  : location.origin+"/dist/sqlFunction/contrl.php",
           dataType : 'text',
           async:false,
           data : {signout : 1},
@@ -289,7 +289,7 @@
 
       $.ajax({
         type: "POST",
-        url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
+        url: location.origin+"/dist/sqlFunction/contrl.php",
         dataType:'text',
         async:false,
         data: { 
@@ -356,7 +356,7 @@
 
       $.ajax({
         type: "POST",
-        url: location.origin+"/SafeDisk_test/dist/sqlFunction/contrl.php",
+        url: location.origin+"/dist/sqlFunction/contrl.php",
         dataType:'text',
         async:false,
         data: { 

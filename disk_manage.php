@@ -66,7 +66,7 @@
           "paging": false,
           "info":    false,
           "bFilter": false,
-          "ajax": location.origin+"/SafeDisk_test/dist/sqlFunction/disk_keyList.php"
+          "ajax": location.origin+"/dist/sqlFunction/disk_keyList.php"
         };
         $('#table_id').dataTable(opt);
       });
@@ -83,7 +83,7 @@
           onOpen: function(){
             $.ajax({
               type: "POST",
-              url: location.origin+"/SafeDisk_test/emailSenter.php",
+              url: location.origin+"/emailSenter.php",
               dataType:'text',
               async:false,
               data: {sent_url : sent_url,sent_key : sent_key},
