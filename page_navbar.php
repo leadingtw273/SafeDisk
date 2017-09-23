@@ -113,8 +113,8 @@
   
   $(document).ready(function() {
     var url = location.pathname;
-    var url_1 = "/SafeDisk_test/index.php";
-    var url_2 = "/SafeDisk_test/signup.php";
+    var url_1 = "/index.php";
+    var url_2 = "/signup.php";
     //檢查是否已經登入
     $.ajax({
       type: "POST",
